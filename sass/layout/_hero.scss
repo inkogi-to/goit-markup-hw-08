@@ -1,0 +1,82 @@
+.hero {
+  @include flex(center, center, column);
+
+  max-width: 100vw;
+  height: 400px;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+    url(../images/mobile-breakpoint/header-bg.webp);
+  background-size: 100vw 400px;
+
+  @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+      url(../images/mobile-breakpoint/header-bg@2x.webp);
+  }
+
+  &__title {
+    margin-bottom: 30px;
+
+    max-width: 695px;
+    @include font-style(26px, 42px, 0.06em, 900, uppercase);
+    text-align: center;
+    color: $white-color;
+  }
+
+  &__btn {
+    @include button;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+  //***************-768-*****************
+
+  @media screen and (min-width: $tablet) {
+    @include flex(center, center, column);
+
+    max-width: 100vw;
+    height: 400px;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+      url(../images/tablet-breakpoint/header-bg.webp);
+    background-size: 100vw 400px;
+
+    @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+      background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+        url(../images/tablet-breakpoint/header-bg@2x.webp);
+    }
+    &__title {
+      margin-bottom: 30px;
+
+      max-width: 360px;
+      @include font-style(26px, 42px, 0.06em, 900, uppercase);
+      text-align: center;
+      color: $white-color;
+    }
+  }
+
+  //***************-1200-*****************
+
+  @media screen and (min-width: $desktop) {
+    @include flex(center, center, column);
+
+    max-width: 1600px;
+    height: 600px;
+    margin: 0 auto;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+      url(../images/desktop-breakpoint/header-bg.webp);
+    background-size: 100% 600px;
+
+    @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+      background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+        url(../images/desktop-breakpoint/header-bg@2x.webp);
+    }
+    &__title {
+      margin-bottom: 30px;
+
+      max-width: 696px;
+      @include font-style(44px, 60px, 0.06em, 900, uppercase);
+      text-align: center;
+      color: $white-color;
+    }
+  }
+}

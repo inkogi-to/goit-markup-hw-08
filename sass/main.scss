@@ -1,0 +1,28 @@
+// Utils
+@import './utils/mixins';
+@import './utils/variables';
+@import './utils/placeholders';
+@import './utils/functions';
+
+//Base
+@import './base/normalize';
+@import './base/reset';
+@import './base/global';
+
+//Components
+@import './components/container';
+@import './components/logo';
+@import './components/visually-hidden';
+@import './components/section';
+@import './components/address';
+
+//Layout
+@import './layout/header';
+@import './layout/hero';
+@import './layout/modal';
+@import './layout/features';
+@import './layout/work';
+@import './layout/team';
+@import './layout/clients';
+@import './layout/footer';
+@import './layout/portfolio';

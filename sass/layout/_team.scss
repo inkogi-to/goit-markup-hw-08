@@ -1,0 +1,109 @@
+.team {
+  background-color: #f5f4fa;
+
+  &__top-title {
+    margin-bottom: 50px;
+
+    @include font-style(36px, 42px, 0.03em, 700);
+    text-align: center;
+  }
+  &__list {
+    @include flex(false, center, column);
+  }
+  &__item {
+    max-width: 450px;
+    width: 100%;
+
+    border-radius: 0px 0px 4px 4px;
+
+    @include font-style(16px, 19px, 0.03em);
+
+    background-color: $white-color;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+      0px 2px 1px rgba(0, 0, 0, 0.2);
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
+  &__img{
+    width: 100%;
+  }
+
+  &__content {
+    @include flex(false, center, column);
+    padding: 30px 0 30px;
+  }
+
+  &__title {
+    margin-bottom: 10px;
+    text-align: center;
+    @include font-style(16px, 19px, 0.03em, 500);
+  }
+
+  &__subtitle {
+    margin-bottom: 16px;
+    @include font-style(16px, 19px, 0.03em, 400);
+
+    text-align: center;
+
+    color: $secondary-color-grey;
+  }
+
+  &__socials {
+    @include flex(center);
+    color: #afb1b8;
+  }
+
+  &__social-link {
+    @include flex(center, center);
+
+    padding: 12px;
+
+    border-radius: 50%;
+    @include transition(background-color);
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+    &:hover,
+    &:focus {
+      background-color: $primary-color-blue;
+    }
+  }
+
+  &__social-icon {
+    fill: currentColor;
+    @include transition(fill);
+    :hover > &,
+    :focus > & {
+      fill: $white-color;
+    }
+  }
+  //***************-768-*****************
+
+  @media screen and (min-width: $tablet) {
+    &__list {
+      @include flex(center, false, row);
+      justify-content: center;
+      flex-direction: row;
+      flex-wrap: wrap;
+      margin-top: -30px;
+      margin-left: -30px;
+    }
+    &__item {
+      flex-basis: calc(100% / 2 - 30px);
+      margin-top: 30px;
+      margin-left: 30px;
+      @include font-style(16px, 19px, 0.03em);
+      &:not(:last-child) {
+        margin-bottom: 0;
+      }
+    }
+  }
+  //***************-1200-*****************
+
+  @media screen and (min-width:$desktop) {
+    &__item {
+      flex-basis: calc(100% / 4 - 30px);
+    }
+  }
+}

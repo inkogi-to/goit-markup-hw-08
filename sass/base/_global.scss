@@ -1,0 +1,13 @@
+body {
+  font-family: $primary-font;
+  font-size: $base-font-size;
+  font-weight: 500;
+
+  background-color: $white-color;
+  color: $primary-color;
+  box-sizing: border-box;
+
+}
+.fixed-position {
+ overflow: hidden;;
+}

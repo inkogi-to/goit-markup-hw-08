@@ -1,0 +1,38 @@
+.work {
+  display: none;
+  &__title {
+    margin-bottom: 50px;
+
+    @include font-style(36px, 42px, 0.03em, 700);
+    text-align: center;
+  }
+
+  &__list {
+    @include flex(space-between);
+  }
+
+  &__item {
+    position: relative;
+
+    z-index: -1;
+  }
+
+  &__text {
+    display: block;
+    width: 100%;
+    padding: 27px 0;
+    position: absolute;
+    bottom: 0;
+
+    @include font-style(false, 16px, 0.03em, 700, uppercase);
+    text-align: center;
+
+    background-color: rgba(47, 48, 58, 0.8);
+    color: $white-color;
+  }
+  //***************-1200-*****************
+
+  @media screen and (min-width: $desktop) {
+    display: block;
+  }
+}

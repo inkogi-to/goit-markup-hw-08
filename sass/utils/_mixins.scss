@@ -1,0 +1,103 @@
+@mixin flex($justify-content: false, $align-item: false, $flex-direction: false) {
+  display: flex;
+  @if $justify-content {
+    justify-content: $justify-content;
+  }
+  @if $align-item {
+    align-items: $align-item;
+  }
+  @if $flex-direction {
+    flex-direction: $flex-direction;
+  }
+}
+
+@mixin font-style(
+  $font-size,
+  $line-height,
+  $letter-spacing,
+  $font-weight: false,
+  $text-transform: false,
+  $font-style: false
+) {
+  @if $font-size {
+    font-size: px2em($font-size);
+    line-height: ($line-height / $font-size);
+  } @else {
+    line-height: ($line-height / $base-font-size);
+  }
+
+  letter-spacing: $letter-spacing;
+
+  @if $font-weight {
+    font-weight: $font-weight;
+  }
+
+  @if $text-transform {
+    text-transform: $text-transform;
+  }
+  @if $font-style {
+    font-style: $font-style;
+  }
+}
+
+@mixin transition($transition-property) {
+  transition: $transition-property 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@mixin button {
+  $hoverButton: #188ce8;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  @include font-style(16px, 30px, 0.06em, 700);
+
+  font-size: px2em(16px);
+  line-height: px2em(30px);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+
+  border-radius: 4px;
+
+  background-color: $primary-color-blue;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  color: $white-color;
+
+  @include transition(background-color);
+
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    background-color: $hoverButton;
+  }
+}
+
+@mixin btn-filter {
+  padding: 6px 22px;
+
+  font-family: 'Roboto', serif;
+  @include font-style(16px, 26px, 0.03em, 500);
+
+  border: none;
+  border-radius: 4px;
+
+  background-color: #f5f4fa;
+  color: $primary-color;
+  @include transition(color);
+  @include transition(box-shadowy);
+
+  @include transition(background-color);
+
+  &:hover,
+  &:focus {
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+      0px 2px 2px rgba(0, 0, 0, 0.12);
+    color: $white-color;
+    background-color: $primary-color-blue;
+  }
+  &--active {
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+      0px 2px 2px rgba(0, 0, 0, 0.12);
+    color: $white-color;
+    background-color: $primary-color-blue;
+  }
+}

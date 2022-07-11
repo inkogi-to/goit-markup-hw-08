@@ -1,0 +1,60 @@
+.clients {
+  &__top-title {
+    margin-bottom: 50px;
+
+    @include font-style(36px, 42px, 0.03em, 700);
+    text-align: center;
+  }
+
+  &__list {
+    @include flex(center);
+    flex-wrap: wrap;
+    margin-top: -30px;
+    margin-left: -30px;
+  }
+  &__item {
+    max-width: 210px;
+    flex-basis: calc(100% / 2 - 30px);
+    margin-top: 30px;
+    margin-left: 30px;
+  }
+
+  &__link {
+    @include flex(center, center);
+
+    height: 92px;
+
+    border: 1px solid #afb1b8;
+    border-radius: 4px;
+
+    color: #afb1b8;
+
+    @include transition(border);
+
+    &:hover,
+    &:focus {
+      border: 1px solid $primary-color-blue;
+    }
+  }
+
+  &__icon {
+    fill: currentColor;
+    @include transition(fill);
+    :hover > &,
+    :focus > & {
+      fill: $primary-color-blue;
+    }
+  }
+  @media screen and (min-width: $tablet) {
+    &__item {
+      max-width: 226px;
+      flex-basis: calc(100% / 3 - 30px);
+    }
+  }
+  @media screen and (min-width: $desktop) {
+    &__item {
+      max-width: 170px;
+      flex-basis: calc(100% / 6 - 30px);
+    }
+  }
+}
