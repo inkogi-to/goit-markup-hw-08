@@ -56,6 +56,7 @@
   //***************-768-*****************
   @media screen and (min-width: $tablet) {
     &__logo {
+      padding: 26px 0;
       margin-right: 88px;
     }
     &__icon {
@@ -106,6 +107,11 @@
   &.is-open {
     display: block;
   }
+  @media screen and (max-width: 479px) {
+    &__link {
+      font-size: 2rem;
+    }
+  }
   //***************-768-*****************
 
   @media screen and (min-width: $tablet) {
@@ -151,6 +157,16 @@
   &__icon {
     display: none;
   }
+
+  @media screen and (max-width: 479px) {
+    &__email {
+      font-size: 1.3rem;
+    }
+    &__tel {
+      font-size: 1.7rem;
+    }
+  }
+
   //***************-768-*****************
 
   @media screen and (min-width: $tablet) {
@@ -215,7 +231,12 @@
 
     color: $primary-color-blue;
   }
-  @media screen and (min-width: 768px) {
+  @media screen and (max-width: 479px) {
+    &__link {
+      font-size: 0.78rem;
+    }
+  }
+  @media screen and (min-width: $tablet) {
     display: none;
   }
 }

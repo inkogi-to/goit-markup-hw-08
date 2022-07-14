@@ -12,6 +12,11 @@
 
     color: $white-color;
   }
+  @media screen and (min-width: $desktop) {
+    &__link {
+      @include flex(flex-start);
+    }
+  }
 }
 
 .socials {
@@ -22,7 +27,7 @@
 
   &__title {
     margin-bottom: 20px;
-
+    text-align: center;
     @include font-style(14px, 16px, 0.03em, 700, uppercase);
   }
 
@@ -49,6 +54,11 @@
 
   &__icon {
     fill: currentColor;
+  }
+  @media screen and (min-width: $desktop) {
+    &__title {
+      text-align: left;
+    }
   }
 }
 

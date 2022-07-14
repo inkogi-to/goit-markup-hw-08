@@ -1,6 +1,4 @@
 .portfolio {
-  padding: 60px 0;
-
   &__filters {
     @include flex(flex-start);
     flex-wrap: wrap;
@@ -18,7 +16,7 @@
   }
 
   &__list {
-    @include flex(center);
+    @include flex();
     flex-wrap: wrap;
   }
   &__item {
@@ -85,6 +83,11 @@
 
     color: $primary-color;
   }
+  @media screen and (max-width: 479px) {
+    &__list {
+      justify-content: center;
+    }
+  }
   //***************-768-*****************
 
   @media screen and (min-width: $tablet) {
@@ -92,7 +95,7 @@
       @include flex(center);
       flex-wrap: wrap;
 
-      margin-bottom: 40px;
+      margin-bottom: 30px;
     }
     &__list {
       margin-top: -30px;
@@ -103,11 +106,17 @@
       flex-basis: calc(100% / 2 - 30px);
       margin-top: 30px;
       margin-left: 30px;
+      &:not(:last-child) {
+        margin-bottom: 0;
+      }
     }
   }
   //***************-1200-*****************
 
   @media screen and (min-width: $desktop) {
+    &__filters {
+      margin-bottom: 50px;
+    }
     &__list {
       margin-top: -30px;
       margin-left: -30px;

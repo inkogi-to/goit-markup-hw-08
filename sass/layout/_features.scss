@@ -1,5 +1,5 @@
 .features {
-  padding-top: 94px;
+  padding: 60px 0;
   &__list {
     @include flex(false, center, column);
   }
@@ -8,9 +8,6 @@
 
     &:not(:last-child) {
       margin-bottom: 30px;
-    }
-    &:last-child {
-      margin-bottom: 60px;
     }
   }
   &__top {
@@ -42,10 +39,8 @@
   //***************-768-*****************
 
   @media screen and (min-width: $tablet) {
-    padding-top: 94px;
-    padding-bottom: 60px;
     &__list {
-      @include flex(center, false, row);
+      @include flex(center, baseline, row);
       flex-wrap: wrap;
       margin-top: -30px;
       margin-left: -30px;
@@ -55,6 +50,9 @@
       flex-basis: calc(100% / 2 - 30px);
       margin-top: 30px;
       margin-left: 30px;
+      &:not(:last-child) {
+        margin-bottom: 0;
+      }
     }
     &__title {
       text-align: left;
@@ -62,6 +60,8 @@
   }
   //***************-1200-*****************
   @media screen and (min-width: $desktop) {
+    padding: 94px 0 0 0;
+
     &__item {
       max-width: 270px;
       flex-basis: calc(100% / 2 - 30px);

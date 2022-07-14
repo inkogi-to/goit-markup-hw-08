@@ -2,9 +2,9 @@
   background-color: #f5f4fa;
 
   &__top-title {
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 
-    @include font-style(36px, 42px, 0.03em, 700);
+    @include font-style(28px, 32px, 0.03em, 700);
     text-align: center;
   }
   &__list {
@@ -25,7 +25,7 @@
       margin-bottom: 30px;
     }
   }
-  &__img{
+  &__img {
     width: 100%;
   }
 
@@ -101,7 +101,10 @@
   }
   //***************-1200-*****************
 
-  @media screen and (min-width:$desktop) {
+  @media screen and (min-width: $desktop) {
+    &__top-title {
+      @include font-style(36px, 42px, 0.03em, 700);
+    }
     &__item {
       flex-basis: calc(100% / 4 - 30px);
     }
